@@ -23,6 +23,25 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  std::ifstream ifs(argv[1]);
+  std::ofstream ofs;
+
+  // initial setting
+  initscr();
+  curs_set(1);
+  setlocale(LC_ALL, "");
+  start_color();
+  noecho();
+  keypad(stdscr, TRUE);
+
   
+  if(ifs.fail()) {
+    // for debug
+    fprintf(stdout, "\033[1m\033[31mfile doesn't exist. (this comment is debug mode, so will be removed)\033[m\n");
+  } else {
+    // display the contents of a file in the terminal.
+  }
+  
+  endwin();
   return 0;
 }
